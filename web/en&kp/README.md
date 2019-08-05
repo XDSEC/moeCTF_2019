@@ -34,4 +34,4 @@
 这里 +trace 是因为上面提到的国内没啥公共DNS支持这个功能，需要直连 MoeCTF-NS 服务器查询
 （或者加上参数 @8.8.8.8， Google 的服务器是已经确定支持这个功能的
 
-对于上面提到的第4种方法， Google 就有一个 [dns.google](dns.google)，可指定 Edns Subnet 。
+对于上面提到的第4种方法， Google 就有一个 [dns.google](https://dns.google) ，可指定 Edns Subnet 。
