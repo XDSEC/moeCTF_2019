@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 if(!isset($_COOKIE['login'])) {
     setcookie('login', 'false');
     $_COOKIE['login'] = 'false';

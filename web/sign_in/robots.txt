@@ -1,0 +1,13 @@
+# emmmmm<br>
+<br>
+* now that you've got here, I can give you the flag<br>
+* so, here you are, the flag.<br>
+<br>
+<div class="delete">
+moectf{j4vascrlpt_c4n_m0dlfy_w3bpages}
+</div>
+
+<script>
+var target = document.querySelector(".delete");  
+target.innerHTML = "oops, seems that something executed unexpectedly";
+</script>
