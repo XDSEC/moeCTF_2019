@@ -28,7 +28,7 @@ import socket
 
 #connect to the server
 s = socket.socket()
-s.connect(('129.211.68.220',10000))
+s.connect(('Server address',Port))
 
 #recv welcome message
 s.recv(2000)
