@@ -5,7 +5,7 @@
 ```python
 from pwn import *
 
-p = remote('129.211.68.220',10000)
+p = remote('Server address',Port)
 
 p.recvuntil('Have a try!\n')
 
