@@ -2,4 +2,4 @@
 |-|-|
 |简单题*|sign_in/*|
 |英国人&朝鲜人|en&kp/*|
-|Dynamic|eval.php|
+|Dynamic|Dynamic.php|
