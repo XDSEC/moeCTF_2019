@@ -1,0 +1,389 @@
+Delay 5000000
+KeyDown "Win", 1
+Delay 502
+Delay 18
+KeyDown "R", 1
+Delay 106
+KeyUp "R", 1
+Delay 18
+KeyUp "Win", 1
+Delay 2057
+KeyDown "N", 1
+Delay 80
+KeyUp "N", 1
+Delay 333
+KeyDown "O", 1
+Delay 88
+KeyUp "O", 1
+Delay 442
+KeyDown "T", 1
+Delay 79
+KeyUp "T", 1
+Delay 153
+KeyDown "E", 1
+Delay 104
+KeyUp "E", 1
+Delay 262
+KeyDown "P", 1
+Delay 105
+KeyUp "P", 1
+Delay 454
+KeyDown "D", 1
+Delay 81
+KeyUp "D", 1
+Delay 242
+KeyDown "D", 1
+Delay 78
+KeyUp "D", 1
+Delay 423
+KeyDown "BackSpace", 1
+Delay 97
+KeyUp "BackSpace", 1
+Delay 122
+KeyDown "BackSpace", 1
+Delay 86
+KeyUp "BackSpace", 1
+Delay 607
+KeyDown "A", 1
+Delay 113
+KeyUp "A", 1
+Delay 411
+KeyDown "D", 1
+Delay 77
+KeyUp "D", 1
+Delay 729
+KeyDown "Enter", 1
+Delay 93
+KeyUp "Enter", 1
+Delay 1690
+KeyDown "M", 1
+Delay 49
+KeyUp "M", 1
+Delay 856
+KeyDown "O", 1
+Delay 87
+KeyUp "O", 1
+Delay 383
+KeyDown "E", 1
+Delay 105
+KeyUp "E", 1
+Delay 795
+KeyDown "C", 1
+Delay 91
+KeyUp "C", 1
+Delay 155
+KeyDown "C", 1
+Delay 87
+KeyUp "C", 1
+Delay 337
+KeyDown "T", 1
+Delay 79
+KeyUp "T", 1
+Delay 456
+KeyDown "V", 1
+Delay 87
+KeyUp "V", 1
+Delay 5000000
+KeyDown "BackSpace", 1
+Delay 88
+KeyUp "BackSpace", 1
+Delay 369
+KeyDown "BackSpace", 1
+Delay 63
+KeyUp "BackSpace", 1
+Delay 713
+KeyDown "BackSpace", 1
+Delay 95
+KeyUp "BackSpace", 1
+Delay 1016
+KeyDown "T", 1
+Delay 80
+KeyUp "T", 1
+Delay 841
+KeyDown "F", 1
+Delay 87
+KeyUp "F", 1
+Delay 401
+KeyDown "Shift", 1
+Delay 120
+KeyDown "[", 1
+Delay 102
+KeyUp "[", 1
+Delay 18
+KeyUp "Shift", 1
+Delay 1390
+KeyDown "I", 1
+Delay 90
+KeyUp "I", 1
+Delay 1329
+KeyDown "CapsLock", 1
+Delay 87
+KeyUp "CapsLock", 1
+Delay 200
+KeyDown "T", 1
+Delay 87
+KeyUp "T", 1
+Delay 401
+KeyDown "CapsLock", 1
+Delay 89
+KeyUp "CapsLock", 1
+Delay 431
+KeyDown "Shift", 1
+Delay 103
+KeyDown "-", 1
+Delay 122
+KeyUp "-", 1
+Delay 76
+KeyUp "Shift", 1
+Delay 1034
+KeyDown "I", 1
+Delay 63
+KeyUp "I", 1
+Delay 794
+KeyDown "S", 1
+Delay 102
+KeyUp "S", 1
+Delay 282
+KeyDown "Shift", 1
+Delay 71
+KeyDown "-", 1
+Delay 121
+KeyUp "-", 1
+Delay 17
+KeyUp "Shift", 1
+Delay 736
+KeyDown "CapsLock", 1
+Delay 134
+KeyUp "CapsLock", 1
+Delay 273
+KeyDown "E", 1
+Delay 119
+KeyUp "E", 1
+Delay 66
+KeyDown "CapsLock", 1
+Delay 103
+KeyUp "CapsLock", 1
+Delay 441
+KeyDown "Shift", 1
+Delay 129
+KeyDown "2", 1
+Delay 117
+KeyUp "2", 1
+Delay 15
+KeyUp "Shift", 1
+Delay 353
+KeyDown "S", 1
+Delay 88
+KeyUp "S", 1
+Delay 759
+KeyDown "Y", 1
+Delay 98
+KeyUp "Y", 1
+Delay 224
+KeyDown "BackSpace", 1
+Delay 46
+KeyUp "BackSpace", 1
+Delay 201
+KeyDown "BackSpace", 1
+Delay 48
+KeyUp "BackSpace", 1
+Delay 497
+KeyDown "BackSpace", 1
+Delay 127
+KeyUp "BackSpace", 1
+Delay 242
+KeyDown "BackSpace", 1
+Delay 78
+KeyUp "BackSpace", 1
+Delay 763
+KeyDown "T", 1
+Delay 84
+KeyUp "T", 1
+Delay 490
+KeyDown "O", 1
+Delay 46
+KeyUp "O", 1
+Delay 572
+KeyDown "O", 1
+Delay 36
+KeyUp "O", 1
+Delay 507
+KeyDown "O", 1
+Delay 65
+KeyUp "O", 1
+Delay 269
+KeyDown "O", 1
+Delay 64
+KeyUp "O", 1
+Delay 473
+KeyDown "Shift", 1
+Delay 89
+KeyDown "-", 1
+Delay 106
+KeyUp "-", 1
+Delay 43
+KeyUp "Shift", 1
+Delay 1040
+KeyDown "Shift", 1
+Delay 210
+KeyDown "E", 1
+Delay 113
+KeyUp "E", 1
+Delay 36
+KeyUp "Shift", 1
+Delay 587
+KeyDown "Shift", 1
+Delay 136
+KeyDown "2", 1
+Delay 135
+KeyUp "2", 1
+Delay 31
+KeyUp "Shift", 1
+Delay 744
+KeyDown "S", 1
+Delay 67
+KeyUp "S", 1
+Delay 573
+KeyDown "Shift", 1
+Delay 113
+KeyDown "Y", 1
+Delay 122
+KeyUp "Shift", 1
+Delay 1
+KeyUp "Y", 1
+Delay 741
+KeyDown "Shift", 1
+Delay 168
+KeyDown "-", 1
+Delay 96
+KeyUp "-", 1
+Delay 458
+KeyDown "-", 1
+Delay 102
+KeyUp "-", 1
+Delay 930
+KeyDown "-", 1
+Delay 95
+KeyUp "-", 1
+Delay 151
+KeyUp "Shift", 1
+Delay 913
+KeyDown "F", 1
+Delay 102
+KeyUp "F", 1
+Delay 601
+KeyDown "L", 1
+Delay 74
+KeyUp "L", 1
+Delay 870
+KeyDown "CapsLock", 1
+Delay 137
+KeyUp "CapsLock", 1
+Delay 303
+KeyDown "A", 1
+Delay 105
+KeyUp "A", 1
+Delay 186
+KeyDown "CapsLock", 1
+Delay 116
+KeyUp "CapsLock", 1
+Delay 450
+KeyDown "BackSpace", 1
+Delay 57
+KeyUp "BackSpace", 1
+Delay 201
+KeyDown "BackSpace", 1
+Delay 62
+KeyUp "BackSpace", 1
+Delay 271
+KeyDown "BackSpace", 1
+Delay 89
+KeyUp "BackSpace", 1
+Delay 487
+KeyDown "T", 1
+Delay 63
+KeyUp "T", 1
+Delay 672
+KeyDown "0", 1
+Delay 89
+KeyUp "0", 1
+Delay 5000000
+KeyDown "Shift", 1
+Delay 151
+KeyDown "-", 1
+Delay 97
+KeyUp "-", 1
+Delay 73
+KeyUp "Shift", 1
+Delay 583
+KeyDown "G", 1
+Delay 89
+KeyUp "G", 1
+Delay 551
+KeyDown "E", 1
+Delay 73
+KeyUp "E", 1
+Delay 400
+KeyDown "CapsLock", 1
+Delay 70
+KeyUp "CapsLock", 1
+Delay 417
+KeyDown "T", 1
+Delay 104
+KeyUp "T", 1
+Delay 259
+KeyDown "CapsLock", 1
+Delay 77
+KeyUp "CapsLock", 1
+Delay 323
+KeyDown "Shift", 1
+Delay 116
+KeyDown "-", 1
+Delay 121
+KeyUp "-", 1
+Delay 15
+KeyUp "Shift", 1
+Delay 523
+KeyDown "F", 1
+Delay 135
+KeyUp "F", 1
+Delay 383
+KeyDown "L", 1
+Delay 65
+KeyUp "L", 1
+Delay 273
+KeyDown "Shift", 1
+Delay 134
+KeyDown "2", 1
+Delay 151
+KeyUp "Shift", 1
+Delay 1
+KeyUp "2", 1
+Delay 842
+KeyDown "CapsLock", 1
+Delay 134
+KeyUp "CapsLock", 1
+Delay 216
+KeyDown "G", 1
+Delay 88
+KeyUp "G", 1
+Delay 202
+KeyDown "G", 1
+Delay 62
+KeyUp "G", 1
+Delay 123
+KeyDown "CapsLock", 1
+Delay 100
+KeyUp "CapsLock", 1
+Delay 292
+KeyDown "BackSpace", 1
+Delay 60
+KeyUp "BackSpace", 1
+Delay 539
+KeyDown "Shift", 1
+Delay 208
+KeyDown "]", 1
+Delay 93
+KeyUp "]", 1
+Delay 56
+KeyUp "Shift", 1
