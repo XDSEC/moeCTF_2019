@@ -2,4 +2,6 @@
 |-|-|
 |moeRE|moeRE/*|
 |EasyJava|EasyJava/*|
-
+|EasyRe|EasyRe/*|
+|EasyGo|EasyGo/*|
+|AlgorithmTask|AlgorithmTask/*|
