@@ -5,3 +5,6 @@
 |EasyRe|EasyRe/*|
 |EasyGo|EasyGo/*|
 |AlgorithmTask|AlgorithmTask/*|
+|EasyShell|EasyShell/*|
+|EasyDebugger|EasyDebugger/*|
+|EasyCPP|EasyCPP/*|
