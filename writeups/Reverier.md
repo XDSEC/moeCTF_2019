@@ -1,20 +1,6 @@
 ---
-title: moeCTF 2019 题解
-date: 2019-09-06 18:23
-tags:
-	- CTF
-	- 信息安全
-categories: CTF
 Author: Reverier
 ---
-
-# 前言
-
-好了,本蒟蒻要开始写题解了…
-
-等到比赛结束了才放出噢!
-
-<!--more-->
 
 # 题解
 
