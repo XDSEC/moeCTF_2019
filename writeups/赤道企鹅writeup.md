@@ -8,7 +8,7 @@ typora-copy-images-to: eqqie_photos
 
 ## Pwn
 
-### 一、EasyPwn题解
+### 1.EasyPwn题解
 
 **第一步**：打开IDA分析题目下载的程序发现有一个可以被pwn的关键函数 **gets()。**检查汇编代码发现在调用**gets()**前有一条**lea     rax, [rbp-70h]**指令。注意此时不要把偏移量当成70，进制转换后得出112，还要在加上64位程序一开始 **push rbp**占用的8个字符得出溢出所需字符为120*“A”。
 
@@ -16,7 +16,7 @@ typora-copy-images-to: eqqie_photos
 
 **第三步**：构造payload为**payload="A"\*120+p64(0x00000000004006B6)** pwn一下就可以拿到flag了。
 
-### 二、Rop题解
+### 2.Rop题解
 
 **第一步**：rop相比于之前复杂度较高，但是还是要先分析题目程序。用之前的方法分析得出溢出所需字符为**A\*“12”**，虽然这题没有现成的**system(“/bin/sh”)**，但是有**system()**函数。进一步检查IDA中的字符串列表发现了**.data:0000000000601070    00000008 C   /bin/sh**说明应该想办法把这个字符串作为参数去调用**system()**来getshell。
 
@@ -32,7 +32,7 @@ typora-copy-images-to: eqqie_photos
 
 ​      **用这个pyaload pwn之后即可得到flag**
 
-### 三、Rop2题解
+### 3.Rop2题解
 
 这题难点在于没有了/bin/sh，但是有输入函数，需要把/bin/sh输入到合适的位置后放进寄存器中再调用system函数。
 
@@ -78,7 +78,7 @@ r.interactive()
 
 ## Crypto
 
-### 一、Frequency analysis?
+### 1.Frequency analysis?
 
 题目给出的文件是一个装满字符的文本文档，结合题目名字，肯定是分析各个字符出现次数后排序并输出对应的字符得到flag，果断上万能的Python！
 
@@ -88,7 +88,7 @@ r.interactive()
 
 运行一下Flag就出来了！
 
-### 二、Columnar Transposition
+### 2.Columnar Transposition
 
 ​		这次不用python了，这次用万能的Excel，加解密规则是百度查到的，这里直接放出我的解密格式：
 
@@ -96,7 +96,7 @@ r.interactive()
 
 ​       按顺序取出再base64加密提交即可
 
-### 三、Easy_RSA
+### 3.Easy_RSA
 
 ​       这题叫做Easy_RSA，但是一点不Easy，关键不是算出各个数据，而是生成私钥，由于我用了比较麻烦的方法生成所以这里就不太详细叙说了：
 
@@ -124,7 +124,7 @@ r.interactive()
 
 ​		用openssl的解密命令解密就会出现flag文件，打开即可查看flag。
 
-### 四、Hill Cipher
+### 4.Hill Cipher
 
 ​		这题有点坑….其实说算法难也并不算很难，关键就是python有点精度问题然后导致最后求出的flag有一两个字母不对，最后只能手动int，那我就直接放出python的不太精确的脚本
 
@@ -132,7 +132,7 @@ r.interactive()
 
 ​       反正大概就这样，后来这个库又莫名其妙用不了烦死了，我啥都没干。
 
-### 五、Easy进阶
+### 5.Easy进阶
 
 ​       这题一开始写的时候一直没有思路，直到看到了这么一张图……..
 
@@ -160,7 +160,7 @@ CTFwiki万岁~
 
  
 
-### 六、品质保证
+### 6.品质保证
 
 ​       这题真的变态，不看wiki怎么可能想到hash长度拓展攻击这种玩意儿…..
 
@@ -202,7 +202,7 @@ CTFwiki万岁~
 
 ## WEB
 
-### 一、Protocol
+### 1.Protocol
 
 首先观察题目的URL：**http://39.108.11.206:10003/?file=** 很明显暗示本题是文件包含，于是可以想办法readfile，由于readfile的对象是php文件为了不让其执行，需要base64进行加密后取出。
 
@@ -210,29 +210,29 @@ CTFwiki万岁~
 
 访问和可以打印一串base64，解码之后就是php的源代码了。
 
-### 二、Restrictions
+### 2.Restrictions
 
 众所周知，网站目录下的robots.txt可以屏蔽搜索引擎的抓取，于是访问根目录的robots.txt，再看看网页源代码就会发现flag。
 
-### 三、是时候展示十八年单身的手速了
+### 3.是时候展示十八年单身的手速了
 
 访问网页时老是提示手速不够，其实和速度没关系，postman检查header就会发现connection:close，要把close改成keep-alive就可以保持链接活动，看到flag。
 
-### 四、英国人&朝鲜人
+### 4.英国人&朝鲜人
 
 ​      题目提示“新试”“负载均衡”，于是可知，该服务器可以根据访问者ip确定分配的服务器，进一步dig发现一个做NS的服务器，可以推断应该是DNS负载均衡，于是尝试将系统dns更换为英国区域的DNS直接访问即可出现“英国人”的flag。
 
 ​      朝鲜人与英国人是同一个服务器，由于朝鲜没有公共DNS服务器，所以之前的方法作废，同时如果伪造UDP来源地址请求DNS会导致无法收包。这时候题目中的“新式”让人联想到EDNS技术，这种新式的DNS可以在DNS包中传递client ip从而避免因为DNS地址与用户地址区域不同，导致的负载均衡工作失误。通过更新linux的dig命令调用EDNS：**dig @moectf-ns.gslb.top region.challenge.moectf.cn +client=175.45.176.16** 组后传递的client ip是朝鲜网段的ip，这样就可以得到朝鲜人服务器地址，改host绑定域名直接访问可得朝鲜人flag。
 
-### 五、Amazing_eval
+### 5.Amazing_eval
 
 ​       这题关键在于**eval()**函数，这个函数可以将参数当成php命令执行于是post内容为**echo $flag;**即可返回flag内容。
 
-### 六、今天你备份了嘛
+### 6.今天你备份了嘛
 
 ​       这题关键在于vim编辑文件未保存退出，于是推断也许会存在缓存文件，查询百度得知缓存文件的格式为 原文件名.swp，于是在index.php后缀加上.swp即可通过缓存文件看到flag。
 
-### 七、php弱类型
+### 7.php弱类型
 
 ​       这题要求GET的a值不为数字又要等于0，典型的php弱类型：
 
@@ -265,7 +265,7 @@ CTFwiki万岁~
 
 ​		第二种思路是传数组，因为在比较时数组也会变成o；
 
-### 八、PHP_md5()
+### 8.PHP_md5()
 
 ​      这题的逻辑是要输入两个不同的值但是他们的md5值相同，于是一般情况下立马想到散列碰撞，但是由于php特殊的原因，并不需要散列碰撞。
 
@@ -289,7 +289,7 @@ CTFwiki万岁~
 
 ​       选择两个作为参数传上去即可。
 
-### 九、stronger_php
+### 9.stronger_php
 
 ​       与上一题不同，这次是sha1与md5比较，不能用上述方法绕过
 
@@ -299,21 +299,21 @@ CTFwiki万岁~
 
 比如这样**………./?a[]=123&b[]=456**这样在比较时就会变成a、b两个数组转化为0后比较，可得falg。
 
-### 十、神奇的正则表达式
+### 10.神奇的正则表达式
 
 ​      这题没什么说的，就是百度查表了解每个正则符号的作用传上去就行了。
 
-### 十一、头&终极HTTP请求头
+### 11.头&终极HTTP请求头
 
 ​       两题差不多，就是按照返回内容的要求修改http头，第一题最后会类型报错，应该要修改接受类型，第二题关键在于修改referer表明来源以及修改cookies验证身份。
 
  
 
-### 十二、Dynamic
+### 12.Dynamic
 
 ​       这题在限制了使用一堆函数的同时又要你找出flag文件并显示，检查我们还能做的事：print函数还能用，还可以通过反引号执行system的功能，最关键的是我们可以传多个参数，绕过这个对单独参数判断的逻辑，于是可以构造payload：**`http://moectf.cn:10012/?cmd=$str=$_GET[id];print $str;&id=ls`** 网页会返回目录文件，发现其中除了index.php还有一个文件，修改链接访问它即可得到falg。
 
-### 十三、Object
+### 13.Object
 
 ​       这题难度最大，构造payload需要花非常多心思。首先看题目逻辑，要求输入两个参数 fl 和 ge ，并且对第一个参数进行正则匹配，匹配规则为 大小写字母以及数字+左括号，然后对第二个参数进行反序列化。我们知道反序列化是一个魔法函数，也就是在对象被销毁时会直接调用本题的__destruct()函数，在调用这个函数的同时要对反序列化后的ag进行正则匹配最后放进eval中构造成一个能显示flag的payload。
 
@@ -331,7 +331,7 @@ Payload：`O:4:"flag":2:{s:3:"cmd";s:99:"123";echo $a;echo readfile("php://filte
 
 ##  Reverse
 
-### 一、MoeRe
+### 1.MoeRe
 
 ​		Re一开始这题居然就有点难度，首先打开IDA查看核心代码
 
@@ -351,7 +351,7 @@ Payload：`O:4:"flag":2:{s:3:"cmd";s:99:"123";echo $a;echo readfile("php://filte
 
  
 
-### 二、.pyc
+### 2..pyc
 
 ​       .pyc是python脚本编译成的二进制文件，直接打开是二进制数据，需要专门的工具进行逆向，比如**uncompyle6**，执行**uncompyle6 test.pyc > test1.py**就可以把.pyc逆向成.py
 
@@ -367,7 +367,7 @@ Payload：`O:4:"flag":2:{s:3:"cmd";s:99:"123";echo $a;echo readfile("php://filte
 
 ![](eqqie_photos/QQ截图20190907161120.png)
 
-### 三、EasyShell
+### 3.EasyShell
 
 ​       从题目就可以知道这个程序经过upx加壳，不能直接用IDA打开，先下个upx脱壳软件进行脱壳。
 
@@ -377,11 +377,11 @@ Payload：`O:4:"flag":2:{s:3:"cmd";s:99:"123";echo $a;echo readfile("php://filte
 
 ​      脱壳完放进IDA，Flag明文就如同第一题出现了…..
 
-### 四、Easy Go
+### 4.Easy Go
 
 ​       IDA打开，没什么好说的，一个判断==1107就抛出flag了
 
-### 五、EasyJava
+### 5.EasyJava
 
 ​       逆向java文件后发现是对输入的数字做一系列数学判断，符合条件的数字才能抛出flag，看了下范围不是很大，果断决定暴力出奇迹！For循环跑十几秒就出了……..
 
@@ -389,7 +389,7 @@ Payload：`O:4:"flag":2:{s:3:"cmd";s:99:"123";echo $a;echo readfile("php://filte
 
 ![](eqqie_photos/QQ截图20190907163607-1568633655157.png)
 
-### 六、Mine Sweep
+### 6.Mine Sweep
 
 ​		这是一道恶趣味题，然鹅出题人不够恶趣味，如果扫完雷给个假Flag才是真的666666666……..
 
@@ -407,7 +407,7 @@ Payload：`O:4:"flag":2:{s:3:"cmd";s:99:"123";echo $a;echo readfile("php://filte
 
 ##  
 
-## 七、EasyRe
+## 7.EasyRe
 
 ​       这题有两条路，于是果断在decode的道路上越走越远~
 
@@ -427,7 +427,7 @@ Payload：`O:4:"flag":2:{s:3:"cmd";s:99:"123";echo $a;echo readfile("php://filte
 
 ​      而且不知道是题目问题还是如何，最后的flag在moectf中的m会出现解码错误的情况，好在不影响flag的求解~
 
-### 八、AlgorithmTask
+### 8.AlgorithmTask
 
 ​       这题说难不难，说简单也要靠感觉，题目说两种常见算法，于是果断打开IDA中的字符串查看，发现有一个table和两串字符，其中一串肯定是base64，解密出来发现是半个flag，另一个怎么看怎么像md5，解密出来又是另一半flag，然后就成了……………..
 
@@ -441,11 +441,11 @@ gugugugugugu.......
 
 ## DevOps
 
-### 一、SNI
+### 1.SNI
 
 ​		打开题目链接发现证书报警，而题目是直接用IP访问，说明题目环境配置时没有绑定IP与域名。观察证书发现证书颁发给域名`sspirits.top`，于是修改header里的host为`sspirits.top`即可访问
 
-### 二、SNI++
+### 2.SNI++
 
 ​		这题打开题目链接没有报警但是没有证书，说明服务器绑定了IP与域名，没有域名的话sni机制是不会分发证书的。利用nslookup找到了这个ip的域名后修改host文件，将域名解析到题目ip，直接访问域名，证书报警（可以忽略报警继续访问），参照第一题修改header的host即可消除报警。
 
