@@ -84,7 +84,7 @@ r.interactive()
 
 脚本如下：
 
-![img](file:///C:/Users/djw20/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png)
+![](eqqie_photos/QQ截图20190907155933-1568634856218.png)
 
 运行一下Flag就出来了！
 
@@ -92,7 +92,7 @@ r.interactive()
 
 ​		这次不用python了，这次用万能的Excel，加解密规则是百度查到的，这里直接放出我的解密格式：
 
-![img](file:///C:/Users/djw20/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png)
+!![](eqqie_photos/QQ截图20190907160530-1568634880698.png)
 
 ​       按顺序取出再base64加密提交即可
 
@@ -102,23 +102,23 @@ r.interactive()
 
 ​      首先解析一下公钥：
 
-![img](file:///C:/Users/djw20/AppData/Local/Temp/msohtmlclip1/01/clip_image005.png)
+![](eqqie_photos/QQ截图20190908093319.png)
 
 ​		密钥强度不是很大可以强行分解大素数，可以到一个功能网站上分解，也可以用RSAtools跑两分钟还可以用python的库……
 
  
 
-![img](file:///C:/Users/djw20/AppData/Local/Temp/msohtmlclip1/01/clip_image007.png)
+![](eqqie_photos/QQ截图20190907162058-1568634933053.png)
 
 ​		这是分解之后的结果，然后应该求d的值，这时要用到python或者RSAtools：
 
-![img](file:///C:/Users/djw20/AppData/Local/Temp/msohtmlclip1/01/clip_image008.png)
+![](eqqie_photos/QQ截图20190907163607-1568634944770.png)
 
 ​		这个什么gmpy2库贼难装，推荐还是使用RSAtools把….
 
 ​		然后随便把一个私钥转成XML格式看看需要什么东西构成，再算出来，编码后填进去，再转成pem格式
 
-![img](file:///C:/Users/djw20/AppData/Local/Temp/msohtmlclip1/01/clip_image010.png)
+![](eqqie_photos/QQ截图20190908094116-1568635048358.png)
 
 ​		发现里面是一堆base64加密之后的玩意儿，直接解密还会乱码，于是我尝试解密成16进制格式，再转成10进制，发现就是刚刚求出的数据，同样的方法逆向，封装，私钥就做好了。
 
